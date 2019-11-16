@@ -1,0 +1,20 @@
+{
+  "name": "family-recipe-secrets",
+  "version": "1.0.0",
+  "description": "This is the Backend Code for the Secret-Family-Recipes-Cookbook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bw-Secret-Family-Recipes-Cookbook/BE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bw-Secret-Family-Recipes-Cookbook/BE/issues"
+  },
+  "homepage": "https://github.com/Bw-Secret-Family-Recipes-Cookbook/BE#readme"
+}
