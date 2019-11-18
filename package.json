@@ -4,9 +4,11 @@
   "description": "This is the Backend Code for the Secret-Family-Recipes-Cookbook",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "server": "nodemon index.js",
     "test": "cross-env DB_ENV=testing jest --watchAll",
-    "start": "node index.js"
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
   "repository": {
     "type": "git",
