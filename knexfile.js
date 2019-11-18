@@ -5,11 +5,6 @@ module.exports = {
     connection: {
       filename: "./database/recipes.db3"
     },
-    // pool: {
-    //   afterCreate: (conn, done) => {
-    //     conn.run("PRAGMA foreign_keys = ON", done);
-    //   }
-    // },
     migrations: {
       directory: "./database/migrations"
     },
@@ -22,11 +17,6 @@ module.exports = {
     client: "pg",
     useNullAsDefault: true,
     connection: process.env.DATABASE_URL,
-    // pool: {
-    //   afterCreate: (conn, done) => {
-    //     conn.run("PRAGMA foreign_keys = ON", done);
-    //   }
-    // },
     migrations: {
       directory: "./database/migrations"
     },
