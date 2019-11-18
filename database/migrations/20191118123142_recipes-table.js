@@ -19,14 +19,13 @@ exports.up = function(knex) {
         tbl.string("recipe_source", 255).notNullable();
         tbl.string("recipe_ingredients", 1024).notNullable();
         tbl.string("recipe_category", 255).notNullable();
-        tbl
-          .integer("user_id")
-          .unsigned()
-          .references("id")
-          .inTable("users")
-          .onDelete("CASCADE") // what to do if the primary key value is deleted. "CASCADE" means delete that too
-          .onUpdate("CASCADE")
-          .notNullable(); // what to do if primary key value is updated
+        tbl.integer("user_id");
+        //   .unsigned()
+        //   .references("id")
+        //   .inTable("users")
+        //   .onDelete("CASCADE") // what to do if the primary key value is deleted. "CASCADE" means delete that too
+        //   .onUpdate("CASCADE")
+        //   .notNullable(); // what to do if primary key value is updated
         // Foreign Key for Ingredient id
       })
       // .createTable("ingredients", tbl => {
