@@ -55,17 +55,15 @@ exports.up = function(knex) {
       // })
       .createTable("instructions", tbl => {
         tbl.increments();
-        tbl
-          .string("steps", 1024)
-          .notNullable()
-          .unique();
+        tbl.string("steps", 1024).notNullable();
         tbl
           .integer("recipe_id")
           .unsigned()
           .references("id")
           .inTable("recipes")
           .onDelete("CASCADE")
-          .onUpdate("CASCADE");
+          .onUpdate("CASCADE")
+          .notNullable();
       })
   );
 };
