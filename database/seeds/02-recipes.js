@@ -1,7 +1,7 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex("recipes")
-    .truncate()
+    .delete()
     .then(function() {
       // Inserts seed entries
       return knex("recipes").insert([
@@ -24,8 +24,7 @@ exports.seed = function(knex) {
         {
           recipe_name: "Hot Dog",
           recipe_source: "Grinchy Cousin",
-          recipe_ingredients:
-            "sausage, bread, mustard, salt, Grinchy ketchup",
+          recipe_ingredients: "sausage, bread, mustard, salt, Grinchy ketchup",
           recipe_category: "snack",
           user_id: 3
         } //id  3
