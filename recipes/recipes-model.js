@@ -25,9 +25,19 @@ function getRecipesById(id) {
 
 function addRecipe(user) {
   return db("recipes")
+    .join("instructions as i", "i.recipe_id", "=", "r.id")
     .insert(user, "id")
     .then(ids => {
       const [id] = ids;
       return getRecipesById(id);
     });
 }
+
+// function addInstruction(steps) {
+//   return db("instructions")
+//     .insert(steps, "id")
+//     .then(ids => {
+//       const [id] = ids;
+//       return getRecipesById(id);
+//     });
+// }
