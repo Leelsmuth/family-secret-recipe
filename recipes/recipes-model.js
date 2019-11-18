@@ -3,7 +3,9 @@ const db = require("../database/dbConfig");
 module.exports = {
   getRecipes,
   getRecipesById,
-  addRecipe
+  addRecipe,
+  updateRecipe,
+  removeRecipe
 };
 
 function getRecipes() {
@@ -25,12 +27,23 @@ function getRecipesById(id) {
 
 function addRecipe(user) {
   return db("recipes")
-    .join("instructions as i", "i.recipe_id", "=", "r.id")
     .insert(user, "id")
     .then(ids => {
       const [id] = ids;
       return getRecipesById(id);
     });
+}
+
+function updateRecipe(id, changes) {
+  return db("recipes")
+    .where({ id })
+    .update(changes);
+}
+
+function removeRecipe(id) {
+  return db("recipes")
+    .where("id", id)
+    .del();
 }
 
 // function addInstruction(steps) {
